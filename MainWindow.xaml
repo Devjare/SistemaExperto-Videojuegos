@@ -5,8 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SistemaExpertoProlog_Videojuegos"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="472" Width="854">
+    <WrapPanel Margin="10,11,10,10" Grid.ColumnSpan="2">
+        <WrapPanel.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFFFFFCA" Offset="0"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </WrapPanel.Background>
+
+        <Grid Height="420" Width="825">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="29*" />
+                <ColumnDefinition Width="9*"/>
+                <ColumnDefinition Width="19*" />
+                <ColumnDefinition Width="19*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Button Grid.ColumnSpan="2">Button 1</Button>
+            <Button Grid.Column="2">Button 2</Button>
+            <Button Grid.Column="3">Button 3</Button>
+            <Button Grid.Row="1" Grid.ColumnSpan="2">Button 4</Button>
+            <Button Grid.Column="2" Grid.Row="1">Button 5</Button>
+            <Button Grid.Column="3" Grid.Row="1">Button 6</Button>
+            <Button Grid.Row="2" Grid.ColumnSpan="2">Button 7</Button>
+            <Button Grid.Column="2" Grid.Row="2">Button 8</Button>
+            <Button Grid.Column="3" Grid.Row="2">Button 9</Button>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFFFFCA" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+
+    </WrapPanel>
+
 </Window>

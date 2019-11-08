@@ -1,0 +1,14 @@
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\bin\Debug\SistemaExpertoProlog-Videojuegos.exe.config
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\bin\Debug\SistemaExpertoProlog-Videojuegos.exe
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\bin\Debug\SistemaExpertoProlog-Videojuegos.pdb
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.csprojAssemblyReference.cache
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\MainWindow.g.cs
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\App.g.cs
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos_MarkupCompile.cache
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos_MarkupCompile.lref
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\MainWindow.baml
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.g.resources
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog_Videojuegos.Properties.Resources.resources
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.csproj.GenerateResource.cache
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.exe
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.pdb
