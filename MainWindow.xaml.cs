@@ -37,8 +37,7 @@ namespace SistemaExpertoProlog_Videojuegos
             if (!PlEngine.IsInitialized)
             {
                 String[] param = { "-q" };  // suppressing informational and banner messages
-                var variables = Environment.GetEnvironmentVariables();
-
+                
                 PlEngine.Initialize(param);
                 PlQuery.PlCall("assert(father(martin, inka))");
                 PlQuery.PlCall("assert(father(uwe, gloria))");
