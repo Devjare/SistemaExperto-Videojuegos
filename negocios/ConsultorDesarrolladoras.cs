@@ -11,7 +11,8 @@ namespace SistemaExpertoProlog_Videojuegos.negocios
     {
         public List<Desarrolladora> Consultar()
         {
-            throw new NotImplementedException();
+            var lista = new List<Desarrolladora>();
+            return lista;
         }
     }
 }

@@ -20,3 +20,9 @@ C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Generated
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\ControlCriteriosPersonaje.g.cs
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\ControlCriteriosPersonaje.baml
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.csprojAssemblyReference.cache
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\TarjetaDesarrolladora.g.cs
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\TarjetaVideojuego.g.cs
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\TarjetaDesarrolladora.baml
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\TarjetaVideojuego.baml
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\TarjetaBase.g.cs
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\TarjetaBase.baml

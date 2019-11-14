@@ -62,7 +62,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controles\TarjetaBase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\TarjetaDesarrolladora.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controles\TarjetaPersonaje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\TarjetaVideojuego.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -77,8 +89,17 @@
     <Compile Include="Controles\ControlCriteriosPersonaje.xaml.cs">
       <DependentUpon>ControlCriteriosPersonaje.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controles\TarjetaBase.xaml.cs">
+      <DependentUpon>TarjetaBase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TarjetaDesarrolladora.xaml.cs">
+      <DependentUpon>TarjetaDesarrolladora.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controles\TarjetaPersonaje.xaml.cs">
       <DependentUpon>TarjetaPersonaje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TarjetaVideojuego.xaml.cs">
+      <DependentUpon>TarjetaVideojuego.xaml</DependentUpon>
     </Compile>
     <Compile Include="data\entidades\Desarrolladora.cs" />
     <Compile Include="data\entidades\Entitdad.cs" />

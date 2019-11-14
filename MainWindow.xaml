@@ -20,7 +20,11 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
 
-            <Controles:TarjetaPersonaje Grid.Row="0" Margin="0,0,0,0" Width="Auto"/>
+            <!--TARJETAS -->
+            <Controles:TarjetaBase x:Name="ucTarjetaBase" Grid.Row="0" Margin="0,0" Width="Auto" Visibility="Collapsed"/>
+            <Controles:TarjetaPersonaje x:Name="ucTarjetaPersonaje" Grid.Row="0" Margin="0,0,0,0" Width="Auto" Visibility="Collapsed"/>
+            <Controles:TarjetaDesarrolladora x:Name="ucTarjetaDesarrolladora" Grid.Row="0" Margin="0,0" Width="Auto" Visibility="Collapsed"/>
+            <Controles:TarjetaVideojuego x:Name="ucTarjetaVideojuego" Grid.Row="0" Margin="0,0" Width="Auto" Visibility="Collapsed"/>
 
             <!--Grid botones-->
             <Grid Grid.Row="1">
@@ -42,10 +46,10 @@
             <ComboBox Name="cbOpciones">
                 <ComboBoxItem Tag="Videojuegos">Videojuegos</ComboBoxItem>
                 <ComboBoxItem Tag="Personajes">Personajes</ComboBoxItem>
+                <ComboBoxItem Tag="Desarrolladoras">Desarrolladoras</ComboBoxItem>
             </ComboBox>
 
-            <Controles:ControlCriteriosPersonaje>
-                
+            <Controles:ControlCriteriosPersonaje x:Name="ucCriteriosPersonaje">
             </Controles:ControlCriteriosPersonaje>
 
             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="41" Width="122">

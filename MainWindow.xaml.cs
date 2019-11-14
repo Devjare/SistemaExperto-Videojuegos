@@ -24,13 +24,16 @@ namespace SistemaExpertoProlog_Videojuegos
     public partial class MainWindow : Window
     {
         // Hacer esto una enumeracion
-        private String VIDEOJUEGOS = "Videojuegos";
-        private String PERSONAJES = "Personajes";
-        private String DESARROLLADORA = "Desarrolladora";
+        private Int32 VIDEOJUEGOS = 0;
+        private Int32 PERSONAJES = 1;
+        private Int32 DESARROLLADORA = 2;
 
         public MainWindow()
         {
             InitializeComponent();
+
+            ActivarControlDeUsuario(ucTarjetaBase);
+
             if (!PlEngine.IsInitialized)
             {
                 String[] param = { "-q" };  // suppressing informational and banner messages
@@ -57,7 +60,7 @@ namespace SistemaExpertoProlog_Videojuegos
 
         private void btnConsultar_Click(object sender, RoutedEventArgs e)
         {
-            var opcion = cbOpciones.SelectedItem.ToString();
+            var opcion = cbOpciones.SelectedIndex;
             if (opcion.Equals(VIDEOJUEGOS))
             {
                 var consultor = new ConsultorVideojuegos();
@@ -81,17 +84,26 @@ namespace SistemaExpertoProlog_Videojuegos
 
         private void ActualizarTarjetasDesarrolladoras(List<Desarrolladora> desarrolladoras)
         {
-            throw new NotImplementedException();
+            ActivarControlDeUsuario(ucTarjetaDesarrolladora);
         }
 
         private void ActualizarTarjetasPersonajes(List<Personaje> personajes)
         {
-            throw new NotImplementedException();
+            ActivarControlDeUsuario(ucTarjetaPersonaje);
         }
 
         private void ActualizarTarjetasVideojuegos(List<Videojuego> videojuegos)
         {
-            throw new NotImplementedException();
+            ActivarControlDeUsuario(ucTarjetaVideojuego);
+        }
+
+        private void ActivarControlDeUsuario(UserControl control)
+        {
+            ucTarjetaDesarrolladora.Visibility = Visibility.Collapsed;
+            ucTarjetaPersonaje.Visibility = Visibility.Collapsed;
+            ucTarjetaVideojuego.Visibility = Visibility.Collapsed;
+
+            control.Visibility = Visibility.Visible;
         }
     }
 

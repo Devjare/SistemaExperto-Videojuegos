@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\App.xaml
-3-1753396416
+6-1571723335
 
-161474373378
+19856447856
 141232719607
-Controles\ControlCriteriosPersonaje.xaml;Controles\TarjetaPersonaje.xaml;MainWindow.xaml;
+Controles\ControlCriteriosPersonaje.xaml;Controles\TarjetaBase.xaml;Controles\TarjetaDesarrolladora.xaml;Controles\TarjetaPersonaje.xaml;Controles\TarjetaVideojuego.xaml;MainWindow.xaml;
 
 False
 
