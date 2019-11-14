@@ -35,8 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SwiPlCs, Version=1.1.5990.0, Culture=neutral, PublicKeyToken=03ea137181587c56, processorArchitecture=MSIL">
-      <HintPath>packages\SWI.Prolog.1.1.5990\lib\net35\SwiPlCs.dll</HintPath>
+    <Reference Include="SwiPlCs">
+      <HintPath>..\..\..\Downloads\Prolog_ArtGallery-master\Libraries\SwiPlCs.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -58,6 +58,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controles\ControlCriteriosPersonaje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controles\TarjetaPersonaje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -66,12 +74,27 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controles\ControlCriteriosPersonaje.xaml.cs">
+      <DependentUpon>ControlCriteriosPersonaje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TarjetaPersonaje.xaml.cs">
+      <DependentUpon>TarjetaPersonaje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="data\entidades\Desarrolladora.cs" />
+    <Compile Include="data\entidades\Entitdad.cs" />
+    <Compile Include="data\entidades\Personaje.cs" />
+    <Compile Include="data\PrologConnection.cs" />
+    <Compile Include="data\entidades\Videojuego.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="negocios\IConsultor.cs" />
+    <Compile Include="negocios\ConsultorDesarrolladoras.cs" />
+    <Compile Include="negocios\ConsultorPersonajes.cs" />
+    <Compile Include="negocios\ConsultorVideojuegos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

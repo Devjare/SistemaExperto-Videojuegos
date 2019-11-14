@@ -1,48 +1,63 @@
-﻿<Window x:Class="SistemaExpertoProlog_Videojuegos.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SistemaExpertoProlog_Videojuegos"
+        xmlns:Controles="clr-namespace:SistemaExpertoProlog_Videojuegos.Controles" x:Class="SistemaExpertoProlog_Videojuegos.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="472" Width="854">
-    <WrapPanel Margin="10,11,10,10" Grid.ColumnSpan="2">
-        <WrapPanel.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFFFFFCA" Offset="0"/>
-                <GradientStop Color="White" Offset="1"/>
-            </LinearGradientBrush>
-        </WrapPanel.Background>
+        Title="MainWindow" Height="800" Width="1080"
+        MinHeight="800" MinWidth="960">
 
-        <Grid Height="420" Width="825">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="29*" />
-                <ColumnDefinition Width="9*"/>
-                <ColumnDefinition Width="19*" />
-                <ColumnDefinition Width="19*" />
-            </Grid.ColumnDefinitions>
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*" />
-                <RowDefinition Height="1*" />
-                <RowDefinition Height="1*" />
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-            <Button Grid.ColumnSpan="2">Button 1</Button>
-            <Button Grid.Column="2">Button 2</Button>
-            <Button Grid.Column="3">Button 3</Button>
-            <Button Grid.Row="1" Grid.ColumnSpan="2">Button 4</Button>
-            <Button Grid.Column="2" Grid.Row="1">Button 5</Button>
-            <Button Grid.Column="3" Grid.Row="1">Button 6</Button>
-            <Button Grid.Row="2" Grid.ColumnSpan="2">Button 7</Button>
-            <Button Grid.Column="2" Grid.Row="2">Button 8</Button>
-            <Button Grid.Column="3" Grid.Row="2">Button 9</Button>
-            <Grid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFFFFFCA" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </Grid.Background>
+
+            <Controles:TarjetaPersonaje Grid.Row="0" Margin="0,0,0,0" Width="Auto"/>
+
+            <!--Grid botones-->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" Content="Anterior"/>
+                <Button Grid.Column="1" Content="Siguiente"/>
+
+            </Grid>
+
         </Grid>
 
-    </WrapPanel>
+        <StackPanel Grid.Column="1">
+
+            <TextBlock FontSize="20">¿Qué estas buscando?</TextBlock>
+            <ComboBox Name="cbOpciones">
+                <ComboBoxItem Tag="Videojuegos">Videojuegos</ComboBoxItem>
+                <ComboBoxItem Tag="Personajes">Personajes</ComboBoxItem>
+            </ComboBox>
+
+            <Controles:ControlCriteriosPersonaje>
+                
+            </Controles:ControlCriteriosPersonaje>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="41" Width="122">
+                <Button Margin="5,5">
+                    Cancelar
+                </Button>
+                <Button Margin="5,5" Name="btnConsultar" Click="btnConsultar_Click">
+                    Consultar
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        
+    </Grid>
 
 </Window>
