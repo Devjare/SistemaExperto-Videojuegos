@@ -136,9 +136,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="negocios\Consultor.cs" />
-    <Compile Include="negocios\ConsultorDesarrolladoras.cs" />
-    <Compile Include="negocios\ConsultorPersonajes.cs" />
-    <Compile Include="negocios\ConsultorVideojuegos.cs" />
+    <Compile Include="negocios\Consultores\ConsultorDesarrolladoras.cs" />
+    <Compile Include="negocios\Consultores\ConsultorPersonajes.cs" />
+    <Compile Include="negocios\Consultores\ConsultorVideojuegos.cs" />
+    <Compile Include="negocios\MotorProlog.cs" />
     <Compile Include="negocios\Presentadores\Presentador.cs" />
     <Compile Include="negocios\Presentadores\PresentadorListaPersonajes.cs" />
     <Compile Include="negocios\Presentadores\PresentadorPersonaje.cs" />

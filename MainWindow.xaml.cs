@@ -34,35 +34,24 @@ namespace SistemaExpertoProlog_Videojuegos
             InitializeComponent();
 
             ActivarControlDeUsuario(ucTarjetaBase);
-
-            if (!PlEngine.IsInitialized)
-            {
-                var file = "C:/Users/jandr/Dropbox/Septimo Semestre/Programacion Logica y Funcional/Unidad IV/Proyecto Final/base_conocimiento.pl/datos_prueba.pl";
-                String[] param = { "-q", "-f", file};  // suppressing informational and banner messages
-                // String[] param = { "-q" };
-                PlEngine.Initialize(param);
-                               
-                //using (PlQuery q = new PlQuery("personaje_de(P, C), atomic_list_concat([P,' es_personaje_de ',C], L)"))
-                //{
-                //    foreach (PlQueryVariables v in q.SolutionVariables)
-                //        // MessageBox.Show("\n\t " + (v["L"].ToString()));
-
-                //    //MessageBox.Show("Todos los personajes de Zenith:");
-                //    q.Variables["P"].Unify("Zenith");
-                //    // foreach (PlQueryVariables v in q.SolutionVariables)
-                //        //MessageBox.Show(v["C"].ToString());
-                //}
-                //PlEngine.PlCleanup();
-            }
+            
+            var file = "C:/Users/jandr/Dropbox/Septimo Semestre/Programacion Logica y Funcional/Unidad IV/Proyecto Final/base_conocimiento.pl/datos_prueba.pl";
+            MotorProlog.Instancia.RutaArchivo = file;
         }
 
         private void btnConsultar_Click(object sender, RoutedEventArgs e)
         {
             var opcion = cbOpciones.SelectedIndex;
+            
+            MotorProlog.Instancia.IniciarProlog();
+            
             if (opcion.Equals(VIDEOJUEGOS))
             {
                 var consultor = new ConsultorVideojuegos();
                 List<Videojuego> videojuegos = consultor.Consultar();
+                
+                PlEngine.PlCleanup();
+                
                 ActualizarTarjetasVideojuegos(videojuegos);
             } 
             else if(opcion.Equals(PERSONAJES))
@@ -74,6 +63,7 @@ namespace SistemaExpertoProlog_Videojuegos
                 //
                 List<Personaje> personajes = consultor.Consultar("19", "Rubio", "Azules");
 
+                MotorProlog.Instancia.CerrarProlog();
                 //personajes.Add(new Personaje()
                 //{
                 //    Nombre = "Ryu",

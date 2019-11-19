@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SbsSW.SwiPlCs;
 using SistemaExpertoProlog_Videojuegos.data;
 using SistemaExpertoProlog_Videojuegos.negocios.Presentadores;
-using SistemaExpertoProlog_Videojuegos.negocios.Util;
 
 namespace SistemaExpertoProlog_Videojuegos.negocios
 {
@@ -105,7 +101,6 @@ namespace SistemaExpertoProlog_Videojuegos.negocios
                 var colorOjos = Parametros[COLOR_OJOS].ToString();
                 query = query.Replace(COLOR_OJOS, colorOjos);
             }
-
 
             DefinirQuery($"{query}.");
         }
