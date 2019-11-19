@@ -11,8 +11,6 @@ C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaEx
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.csproj.GenerateResource.cache
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.exe
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.pdb
-C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\bin\Debug\SwiPlCs.dll
-C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\bin\Debug\SwiPlCs.xml
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.csproj.CopyComplete
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\TarjetaPersonaje.g.cs
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\TarjetaPersonaje.baml
@@ -26,3 +24,4 @@ C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\TarjetaVideojuego.baml
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\TarjetaBase.g.cs
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\TarjetaBase.baml
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\bin\Debug\SwiPlCs.dll

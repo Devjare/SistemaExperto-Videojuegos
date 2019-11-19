@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace SistemaExpertoProlog_Videojuegos.data
 {
-    class Desarrolladora : IEntitdad
+    public class Desarrolladora : IEntitdad
     {
         public String Nombre { get; set; }
-        public string Descripcion { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Descripcion { get; set; }
         public List<Videojuego> Videojuegos { get; set; }
     }
 }

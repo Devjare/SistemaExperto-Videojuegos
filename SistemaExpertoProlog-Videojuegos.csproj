@@ -34,12 +34,35 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="SwiPlCs">
-      <HintPath>..\..\..\Downloads\Prolog_ArtGallery-master\Libraries\SwiPlCs.dll</HintPath>
+      <HintPath>packages\Swi.prolog.1.1.60605.0\SwiPlCs.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -112,10 +135,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="negocios\IConsultor.cs" />
+    <Compile Include="negocios\Consultor.cs" />
     <Compile Include="negocios\ConsultorDesarrolladoras.cs" />
     <Compile Include="negocios\ConsultorPersonajes.cs" />
     <Compile Include="negocios\ConsultorVideojuegos.cs" />
+    <Compile Include="negocios\Presentadores\Presentador.cs" />
+    <Compile Include="negocios\Presentadores\PresentadorListaPersonajes.cs" />
+    <Compile Include="negocios\Presentadores\PresentadorPersonaje.cs" />
+    <Compile Include="negocios\TipoQuery.cs" />
+    <Compile Include="negocios\Util\ConstructorConsulta.cs" />
+    <Compile Include="negocios\Util\ProcesadorEntrada.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -141,6 +170,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ryu_png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\Imagenes\ken_masters.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\Imagenes\ryu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\Imagenes\ken_masters.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\Imagenes\base_jpg.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

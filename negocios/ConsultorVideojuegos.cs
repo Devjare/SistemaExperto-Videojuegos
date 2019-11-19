@@ -7,12 +7,27 @@ using SistemaExpertoProlog_Videojuegos.data;
 
 namespace SistemaExpertoProlog_Videojuegos.negocios
 {
-    class ConsultorVideojuegos : IConsultor<Videojuego>
+    class ConsultorVideojuegos : Consultor<Videojuego>
     {
-        public List<Videojuego> Consultar()
+        public override List<Videojuego> Consultar(params object[] args)
         {
             var lista = new List<Videojuego>();
             return lista;
+        }
+
+        protected override void DefinirConsultas()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void DefinirParametros()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void GenerarConsulta()
+        {
+            throw new NotImplementedException();
         }
     }
 }

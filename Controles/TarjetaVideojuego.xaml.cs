@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaExpertoProlog_Videojuegos.data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,7 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
     /// </summary>
     public partial class TarjetaVideojuego : UserControl
     {
+        public List<Videojuego> Videojuegos { get; set; }
         public TarjetaVideojuego()
         {
             InitializeComponent();

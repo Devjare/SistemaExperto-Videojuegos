@@ -7,12 +7,27 @@ using System.Threading.Tasks;
 
 namespace SistemaExpertoProlog_Videojuegos.negocios
 {
-    class ConsultorDesarrolladoras : IConsultor<Desarrolladora>
+    class ConsultorDesarrolladoras : Consultor<Desarrolladora>
     {
-        public List<Desarrolladora> Consultar()
+        public override List<Desarrolladora> Consultar(params object[] args)
         {
             var lista = new List<Desarrolladora>();
             return lista;
+        }
+
+        protected override void DefinirConsultas()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void DefinirParametros()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void GenerarConsulta()
+        {
+            throw new NotImplementedException();
         }
     }
 }

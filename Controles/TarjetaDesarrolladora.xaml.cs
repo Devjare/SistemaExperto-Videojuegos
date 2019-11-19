@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaExpertoProlog_Videojuegos.data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,11 +16,14 @@ using System.Windows.Shapes;
 
 namespace SistemaExpertoProlog_Videojuegos.Controles
 {
+
     /// <summary>
     /// Interaction logic for TarjetaDesarrolladora.xaml
     /// </summary>
     public partial class TarjetaDesarrolladora : UserControl
     {
+        public List<Desarrolladora> Desarrolladoras { get; set; }
+
         public TarjetaDesarrolladora()
         {
             InitializeComponent();
