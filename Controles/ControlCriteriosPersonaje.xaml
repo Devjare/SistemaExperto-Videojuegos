@@ -7,7 +7,114 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" Width="530"
              MinHeight="675" MinWidth="720">
-    <Grid>
+
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       FontSize="24"
+                       HorizontalAlignment="Center"
+                       FontFamily="Segoe UI">
+                Buscar videojuego!
+            </TextBlock>
+
+            <Grid Grid.Row="1">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <StackPanel Grid.Row="0" 
+                    Grid.Column="0" 
+                    Margin="10, 10" 
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Stretch">
+                    <TextBox FontFamily="Lucida Sans Serif" 
+                     FontSize="12pt">
+                        Año:
+                    </TextBox>
+                    <ComboBox Name="cbAños"/>
+                    <CheckBox x:Name="chkAñoDesconocido">
+                        Desconocido
+                    </CheckBox>
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" 
+                    Grid.Column="1" 
+                    Margin="10, 10" 
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Stretch">
+                    <TextBox FontFamily="Lucida Sans Serif" 
+                     FontSize="12pt">
+                        Desarrolladora:
+                    </TextBox>
+                    <ComboBox Name="cbDesarrolladora"/>
+                    <CheckBox x:Name="chkDesarrolladoraDesconocida">
+                        Desconocida
+                    </CheckBox>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" 
+                    Grid.Column="0" 
+                    Margin="10, 10" 
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Stretch">
+                    <TextBox FontFamily="Lucida Sans Serif" 
+                     FontSize="12pt">
+                        Genero:
+                    </TextBox>
+                    <ComboBox Name="cbGenero"/>
+                    <CheckBox x:Name="chkGeneroDesconocido">
+                        Desconocido
+                    </CheckBox>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" 
+                    Grid.Column="1" 
+                    Margin="10, 10" 
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Stretch">
+                    <TextBox FontFamily="Lucida Sans Serif" 
+                     FontSize="12pt">
+                        Tema:
+                    </TextBox>
+                    <ComboBox Name="cbTema"/>
+                    <CheckBox x:Name="chkTemaDesconocido">
+                        Desconocido
+                    </CheckBox>
+                </StackPanel>
+                
+            </Grid>
+
+            <StackPanel Grid.Row="2" 
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+
+                <Button Margin="5,5"
+                        Name="btnAgregarPersonaje">Agregar personaje</Button>
+                <Button Margin="5,5" 
+                        Name="btnEliminarPersonaje">Eliminart personaje</Button>
+                
+            </StackPanel>
             
-    </Grid>
+            <Grid Grid.Row="3">
+                <StackPanel x:Name="spPersonajes">
+                    
+                </StackPanel>
+            </Grid>
+            
+        </Grid>
+    </ScrollViewer>
+    
 </UserControl>

@@ -21,30 +21,30 @@ namespace SistemaExpertoProlog_Videojuegos.negocios
         public override List<Personaje> Consultar(params object[] args)
         {
             // edad(X, EDAD), color_cabello(X, COLOR), color_ojos(X, OJOS, mide(X, ESTATURA).            
-            switch (args.Length)
+
+            for (int i = 0; i < args.Length; i++)
             {
-                case 1:
-                    Parametros[EDAD] = Int32.Parse(args[0].ToString());                    
-                    break;
-                case 2:
-                    Parametros[EDAD] = Int32.Parse(args[0].ToString());
-                    Parametros[COLOR_CABELLO] = Procesador.Procesar(args[1].ToString());
-                    break;
-                case 3:
-                    Parametros[EDAD] = Int32.Parse(args[0].ToString());
-                    Parametros[COLOR_CABELLO] = Procesador.Procesar(args[1].ToString());
-                    Parametros[COLOR_OJOS] = Procesador.Procesar(args[2].ToString());
-                    break;
+                if (i == 0) Parametros[EDAD] = Int32.Parse(args[i].ToString());
+                else if (i == 1) Parametros[COLOR_CABELLO] = Procesador.Procesar(args[i].ToString());
+                else Parametros[COLOR_OJOS] = Procesador.Procesar(args[i].ToString());
             }
 
-            
             GenerarConsulta();
 
             var presentador = new PresentadorListaPersonajes();
             var personajes = presentador.Procesar(ObtenerResultados());
-
-            PlEngine.PlCleanup();
+            
             return personajes;
+        }
+
+        public override List<Personaje> ConsultarTodos()
+        {
+            DefinirQuery($"{ Consultas[TipoQuery.PERSONAJE] }.");
+
+            var presentador = new PresentadorListaPersonajes();
+            var listaPersonajes = presentador.Procesar(ObtenerResultados());
+
+            return listaPersonajes;
         }
 
         protected override void DefinirConsultas()

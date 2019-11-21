@@ -19,6 +19,7 @@ namespace SistemaExpertoProlog_Videojuegos.negocios
             Procesador = new ProcesadorEntrada();
         }
         public abstract List<T> Consultar(params object[] args);
+        public abstract List<T> ConsultarTodos();
         protected void DefinirQuery(String query)
         {
             Query = new PlQuery(query);

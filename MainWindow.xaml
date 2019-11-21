@@ -10,8 +10,9 @@
 
     <Grid ShowGridLines="True">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition MinWidth="350" Width="350"/>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0" Margin="10,10">
@@ -40,19 +41,24 @@
 
         </Grid>
 
-        <StackPanel Grid.Column="1">
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
 
-            <TextBlock FontSize="20">¿Qué estas buscando?</TextBlock>
-            <ComboBox Name="cbOpciones">
+            <TextBlock FontSize="20" Grid.Row="0">¿Qué estas buscando?</TextBlock>
+            <ComboBox Name="cbOpciones" Grid.Row="1">
                 <ComboBoxItem Tag="Videojuegos">Videojuegos</ComboBoxItem>
                 <ComboBoxItem Tag="Personajes">Personajes</ComboBoxItem>
                 <ComboBoxItem Tag="Desarrolladoras">Desarrolladoras</ComboBoxItem>
             </ComboBox>
 
-            <Controles:ControlCriteriosPersonaje x:Name="ucCriteriosPersonaje">
-            </Controles:ControlCriteriosPersonaje>
+            <Controles:ControlCriteriosPersonaje Width="Auto" Grid.Row="2" x:Name="ucCriteriosPersonaje"/>
 
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="41" Width="122">
+            <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="41" Width="122">
                 <Button Margin="5,5">
                     Cancelar
                 </Button>
@@ -60,7 +66,16 @@
                     Consultar
                 </Button>
             </StackPanel>
-        </StackPanel>
+
+        </Grid>
+        
+        <GridSplitter HorizontalAlignment="Center"
+                      VerticalAlignment="Stretch"
+                      Grid.Column="1"
+                      Width="5"
+                      Background="Black">
+            
+        </GridSplitter>
         
     </Grid>
 

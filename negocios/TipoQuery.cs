@@ -22,6 +22,8 @@ namespace SistemaExpertoProlog_Videojuegos.negocios
 
         // QUERIES DESARROLLADORAS
         DESARROLLADORA,
-        TIENE_EDAD
+        TIENE_EDAD,
+        TEMA,
+        GENEROS
     }
 }

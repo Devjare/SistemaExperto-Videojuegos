@@ -1,21 +1,10 @@
-﻿using SbsSW.SwiPlCs;
-using SistemaExpertoProlog_Videojuegos.Controles;
+﻿using SistemaExpertoProlog_Videojuegos.Controles;
 using SistemaExpertoProlog_Videojuegos.data;
 using SistemaExpertoProlog_Videojuegos.negocios;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace SistemaExpertoProlog_Videojuegos
 {
@@ -31,26 +20,26 @@ namespace SistemaExpertoProlog_Videojuegos
 
         public MainWindow()
         {
+            var file = "C:/Users/jandr/Dropbox/Septimo Semestre/Programacion Logica y Funcional/Unidad IV/Proyecto Final/base_conocimiento.pl/datos_prueba.pl";
+            MotorProlog.Instancia.RutaArchivo = file;
+
+            MotorProlog.Instancia.IniciarProlog();
+
             InitializeComponent();
 
             ActivarControlDeUsuario(ucTarjetaBase);
-            
-            var file = "C:/Users/jandr/Dropbox/Septimo Semestre/Programacion Logica y Funcional/Unidad IV/Proyecto Final/base_conocimiento.pl/datos_prueba.pl";
-            MotorProlog.Instancia.RutaArchivo = file;
         }
 
         private void btnConsultar_Click(object sender, RoutedEventArgs e)
         {
             var opcion = cbOpciones.SelectedIndex;
             
-            MotorProlog.Instancia.IniciarProlog();
-            
             if (opcion.Equals(VIDEOJUEGOS))
             {
                 var consultor = new ConsultorVideojuegos();
                 List<Videojuego> videojuegos = consultor.Consultar();
-                
-                PlEngine.PlCleanup();
+
+                MotorProlog.Instancia.CerrarProlog();
                 
                 ActualizarTarjetasVideojuegos(videojuegos);
             } 
@@ -60,46 +49,17 @@ namespace SistemaExpertoProlog_Videojuegos
                 // Edad, Color cabello, Color ojos, Estatura
                 //
                 // edad(X, EDAD), color_cabello(X, COLOR), color_ojos(X, OJOS, mide(X, ESTATURA).
-                //
                 List<Personaje> personajes = consultor.Consultar("19", "Rubio", "Azules");
 
-                MotorProlog.Instancia.CerrarProlog();
-                //personajes.Add(new Personaje()
-                //{
-                //    Nombre = "Ryu",
-                //    Descripcion = "Pertenece a Street fighter saga",
-                //    Videojuegos = new List<Videojuego>()
-                //    {
-                //        new Videojuego() { Nombre = "Street Fighter I"},
-                //        new Videojuego() { Nombre = "Street Fighter II"},
-                //        new Videojuego() { Nombre = "Street Fighter III"},
-                //        new Videojuego() { Nombre = "Street Fighter IV"},
-                //        new Videojuego() { Nombre = "Super Puzzle Fighter II"}
-                //    },
-                //    Imagen = "ryu_png"
-                //});
-                //personajes.Add(new Personaje()
-                //{
-                //    Nombre = "Ken Masters",
-                //    Descripcion = "Pertenece a Street fighter saga Tambien!!",
-                //    Videojuegos = new List<Videojuego>()
-                //    {
-                //        new Videojuego() { Nombre = "Street Fighter I"},
-                //        new Videojuego() { Nombre = "Street Fighter II"},
-                //        new Videojuego() { Nombre = "Street Fighter III"},
-                //        new Videojuego() { Nombre = "Street Fighter IV"},
-                //        new Videojuego() { Nombre = "Super Puzzle Fighter II"}
-                //    },
-                //    Imagen = "ken_masters_jpg"
-                //});
-
+                //MotorProlog.Instancia.CerrarProlog();
+                
                 ActualizarTarjetasPersonajes(personajes);
             }
             else
             {
                 var consultor = new ConsultorDesarrolladoras();
-                List<Desarrolladora> desarrolladoras = consultor.Consultar();
-                ActualizarTarjetasDesarrolladoras(desarrolladoras);
+                List<String> desarrolladoras = consultor.Consultar();
+                // ActualizarTarjetasDesarrolladoras(desarrolladoras);
             }
         }
 

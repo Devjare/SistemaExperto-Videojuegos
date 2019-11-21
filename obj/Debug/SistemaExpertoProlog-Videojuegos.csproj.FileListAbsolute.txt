@@ -25,3 +25,5 @@ C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\TarjetaBase.g.cs
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\TarjetaBase.baml
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\bin\Debug\SwiPlCs.dll
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\DatosPersonaje.g.cs
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\DatosPersonaje.baml

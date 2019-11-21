@@ -15,6 +15,11 @@ namespace SistemaExpertoProlog_Videojuegos.negocios
             return lista;
         }
 
+        public override List<Videojuego> ConsultarTodos()
+        {
+            throw new NotImplementedException();
+        }
+
         protected override void DefinirConsultas()
         {
             throw new NotImplementedException();
