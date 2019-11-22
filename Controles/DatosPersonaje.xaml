@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SistemaExpertoProlog_Videojuegos.Controles"
              mc:Ignorable="d" 
-             d:DesignHeight="175" d:DesignWidth="800">
+             d:DesignHeight="210" d:DesignWidth="800">
     <Grid Margin="10,10">
 
         <Grid.RowDefinitions>
@@ -30,11 +30,22 @@
         <Grid Grid.Column="0" 
               Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
             <StackPanel Grid.Row="0"
+                        Margin="10,0">
+                <TextBlock FontFamily="Segoe UI"
+                           FontSize="14pt">
+                    Personaje:
+                </TextBlock>
+                <CheckBox x:Name="chkPersonajeConocido">Conoce el personaje?</CheckBox>
+                <ComboBox Name="cbPersonajes"/>
+            </StackPanel>
+            
+            <StackPanel Grid.Row="1"
                         Margin="10,0">
                 <TextBlock FontFamily="Segoe UI"
                            FontSize="14pt">
@@ -44,7 +55,7 @@
                           Grid.Row="0"/>
             </StackPanel>
 
-            <StackPanel Grid.Row="1"
+            <StackPanel Grid.Row="2"
                         Margin="10,0">
                 <TextBlock FontFamily="Segoe UI"
                            FontSize="14pt">

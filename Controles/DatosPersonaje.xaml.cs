@@ -1,4 +1,5 @@
 ﻿using SistemaExpertoProlog_Videojuegos.data;
+using SistemaExpertoProlog_Videojuegos.negocios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,38 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
         {
             InitializeComponent();
 
+            LlenarComboboxPersonajes();
+
             btnDefinirPersonaje.Click += (s, e) => { DefinirPersonaje(); };
+
+            cbPersonajes.IsEnabled = false;
+            
+            chkPersonajeConocido.Checked += (s, e) => { HabilitarComboboxPersonaje(true); };
+            chkPersonajeConocido.Unchecked += (s, e) => { HabilitarComboboxPersonaje(false); };
+        }
+
+        private void HabilitarComboboxPersonaje(bool estado)
+        {
+            cbPersonajes.IsEnabled = estado;
+            cbAtaque.IsEnabled = !estado;
+            cbColor.IsEnabled = !estado;
+            cbEspecie.IsEnabled = !estado;
+            cbGenero.IsEnabled = !estado;
+        }
+
+        private void LlenarComboboxPersonajes()
+        {
+            var consultor = new ConsultorPersonajes();
+            var personajes = consultor.ConsultarTodos();
+
+            var nombresPersonajes = new List<String>();
+
+            foreach (var p in personajes)
+            {
+                nombresPersonajes.Add(p.Nombre);
+            }
+
+            cbPersonajes.ItemsSource = nombresPersonajes;
         }
 
         private void DefinirPersonaje()

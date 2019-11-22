@@ -105,9 +105,12 @@
                         Name="btnAgregarPersonaje">Agregar personaje</Button>
                 <Button Margin="5,5" 
                         Name="btnEliminarPersonaje">Eliminart personaje</Button>
-                
+                <Button Margin="5,5"
+                        Name="btnDefinirCriterios">
+                    Definir Criterios.
+                </Button>
             </StackPanel>
-            
+
             <Grid Grid.Row="3">
                 <StackPanel x:Name="spPersonajes">
                     

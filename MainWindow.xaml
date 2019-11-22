@@ -56,7 +56,9 @@
                 <ComboBoxItem Tag="Desarrolladoras">Desarrolladoras</ComboBoxItem>
             </ComboBox>
 
-            <Controles:ControlCriteriosPersonaje Width="Auto" Grid.Row="2" x:Name="ucCriteriosPersonaje"/>
+            <Controles:ControlCriteriosPersonaje Width="Auto" 
+                                                 Grid.Row="2" 
+                                                 x:Name="ucCriteriosPersonaje"/>
 
             <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="41" Width="122">
                 <Button Margin="5,5">

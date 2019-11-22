@@ -25,7 +25,7 @@ namespace SistemaExpertoProlog_Videojuegos
 
             MotorProlog.Instancia.IniciarProlog();
 
-            InitializeComponent();
+            InitializeComponent();            
 
             ActivarControlDeUsuario(ucTarjetaBase);
         }
@@ -46,9 +46,6 @@ namespace SistemaExpertoProlog_Videojuegos
             else if(opcion.Equals(PERSONAJES))
             {
                 var consultor = new ConsultorPersonajes();
-                // Edad, Color cabello, Color ojos, Estatura
-                //
-                // edad(X, EDAD), color_cabello(X, COLOR), color_ojos(X, OJOS, mide(X, ESTATURA).
                 List<Personaje> personajes = consultor.Consultar("19", "Rubio", "Azules");
 
                 //MotorProlog.Instancia.CerrarProlog();

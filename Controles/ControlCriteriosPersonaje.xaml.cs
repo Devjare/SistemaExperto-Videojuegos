@@ -15,7 +15,11 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
     {
         Stack<Personaje> Personajes { get; set; }
         DatosPersonaje ultimoPersonajeAgregado;
-        String Query { get; set; }
+        public String Anio { get; private set; }
+        public String Desarrolladora { get; private set; }
+        public String Genero { get; private set; }
+        public String Tema { get; private set; }
+
         public ControlCriteriosPersonaje()
         {
             InitializeComponent();
@@ -27,7 +31,7 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
             LlenarComboboxDesarrolladoras();
             LlenarComboboxTemas();
 
-            chkAñoDesconocido.Unchecked += (s,e) => { HabilitarComboBox(cbAños, true); };
+            chkAñoDesconocido.Unchecked += (s, e) => { HabilitarComboBox(cbAños, true); };
             chkAñoDesconocido.Checked += (s, e) => { HabilitarComboBox(cbAños, false); };
 
             chkDesarrolladoraDesconocida.Unchecked += (s, e) => { HabilitarComboBox(cbDesarrolladora, true); };
@@ -42,17 +46,27 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
             btnAgregarPersonaje.Click += (s, e) => { AgregarControlPersonaje(); };
             btnEliminarPersonaje.Click += (s, e) => { EliminarPersonaje(); };
 
+            btnDefinirCriterios.Click += (s, e) => { DefinirCriterios(); };
+
             // cbAños.SelectionChanged += (s, e) => { }
-            MotorProlog.Instancia.CerrarProlog();
+        }
+
+        private void DefinirCriterios()
+        {
+            Anio = cbAños.SelectedItem.ToString();
+            Desarrolladora = cbDesarrolladora.SelectedItem.ToString();
+            Genero = cbGenero.SelectedItem.ToString();
+            Tema = cbTema.SelectedItem.ToString();
         }
 
         private void LlenarComboboxTemas()
-        {            
+        {
 
             var consultor = new ConsultorTemas();
             var temas = consultor.ConsultarTodos();
 
             cbTema.ItemsSource = temas;
+            cbTema.SelectedIndex = 0;
         }
 
         private void LlenarComboboxDesarrolladoras()
@@ -61,6 +75,7 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
             var desarrolladoras = consultor.ConsultarTodos();
 
             cbDesarrolladora.ItemsSource = desarrolladoras;
+            cbDesarrolladora.SelectedIndex = 0;
         }
 
         private void LlenarComboboxGeneros()
@@ -69,11 +84,12 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
             var generos = consultor.ConsultarTodos();
 
             cbGenero.ItemsSource = generos;
+            cbGenero.SelectedIndex = 0;
         }
 
         private void LlenarComboboxAnio()
         {
-            var años = new List<Int32>();            
+            var años = new List<Int32>();
 
             var añoActual = DateTime.Now.Year;
             var añoPrimerVideojuego = 1958;
@@ -81,13 +97,13 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
             años.AddRange(Enumerable.Range(añoPrimerVideojuego, añoActual - añoPrimerVideojuego + 1));
 
             cbAños.ItemsSource = años;
+            cbAños.SelectedIndex = 0;
         }
 
         private void HabilitarComboBox(ComboBox comboBox, bool estado)
         {
             comboBox.IsEnabled = estado;
         }
-
         private void AgregarControlPersonaje()
         {
             Personajes.Push(new Personaje());
