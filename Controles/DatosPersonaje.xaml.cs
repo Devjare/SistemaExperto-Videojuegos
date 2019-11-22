@@ -29,6 +29,10 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
             InitializeComponent();
 
             LlenarComboboxPersonajes();
+            LlenarComboboxColores();
+            LlenarComboboxGenero();
+            LlenarComboboxAtaque();
+            LlenarComboboxEspecie();
 
             btnDefinirPersonaje.Click += (s, e) => { DefinirPersonaje(); };
 
@@ -36,6 +40,26 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
             
             chkPersonajeConocido.Checked += (s, e) => { HabilitarComboboxPersonaje(true); };
             chkPersonajeConocido.Unchecked += (s, e) => { HabilitarComboboxPersonaje(false); };
+        }
+
+        private void LlenarComboboxEspecie()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void LlenarComboboxAtaque()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void LlenarComboboxGenero()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void LlenarComboboxColores()
+        {
+            throw new NotImplementedException();
         }
 
         private void HabilitarComboboxPersonaje(bool estado)

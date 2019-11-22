@@ -22,8 +22,16 @@
             </Grid.RowDefinitions>
 
             <!--TARJETAS -->
-            <Controles:TarjetaBase x:Name="ucTarjetaBase" Grid.Row="0" Margin="0,0" Width="Auto" Visibility="Collapsed"/>
-            <Controles:TarjetaPersonaje x:Name="ucTarjetaPersonaje" Grid.Row="0" Margin="0,0,0,0" Width="Auto" Visibility="Collapsed"/>
+            <Controles:TarjetaBase x:Name="ucTarjetaBase" 
+                                   Grid.Row="0" 
+                                   Margin="0,0" 
+                                   Width="Auto" 
+                                   Visibility="Collapsed"/>
+            <Controles:TarjetaPersonaje x:Name="ucTarjetaPersonaje" 
+                                        Grid.Row="0" 
+                                        Margin="0,0,0,0" 
+                                        Width="Auto" 
+                                        Visibility="Collapsed"/>
             <Controles:TarjetaDesarrolladora x:Name="ucTarjetaDesarrolladora" Grid.Row="0" Margin="0,0" Width="Auto" Visibility="Collapsed"/>
             <Controles:TarjetaVideojuego x:Name="ucTarjetaVideojuego" Grid.Row="0" Margin="0,0" Width="Auto" Visibility="Collapsed"/>
 
@@ -41,7 +49,7 @@
 
         </Grid>
 
-        <Grid Grid.Column="2">
+        <Grid Grid.Column="2" Margin="0,-4,0,4">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>

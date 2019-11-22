@@ -47,16 +47,21 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
             btnEliminarPersonaje.Click += (s, e) => { EliminarPersonaje(); };
 
             btnDefinirCriterios.Click += (s, e) => { DefinirCriterios(); };
-
-            // cbAños.SelectionChanged += (s, e) => { }
         }
 
         private void DefinirCriterios()
         {
-            Anio = cbAños.SelectedItem.ToString();
-            Desarrolladora = cbDesarrolladora.SelectedItem.ToString();
-            Genero = cbGenero.SelectedItem.ToString();
-            Tema = cbTema.SelectedItem.ToString();
+            if (chkAñoDesconocido.IsChecked == true) Anio = "desconocido";
+            else Anio = cbAños.SelectedItem.ToString();
+
+            if (chkDesarrolladoraDesconocida.IsChecked == true) Desarrolladora = "desconocida";
+            else Desarrolladora = cbDesarrolladora.SelectedItem.ToString();
+
+            if (chkGeneroDesconocido.IsChecked == true) Genero = "desconocido";
+            else Genero = cbGenero.SelectedItem.ToString();
+
+            if (chkTemaDesconocido.IsChecked == true) Tema = "desconocido";
+            else Tema = cbTema.SelectedItem.ToString();
         }
 
         private void LlenarComboboxTemas()

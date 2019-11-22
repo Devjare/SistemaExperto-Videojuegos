@@ -21,11 +21,17 @@ namespace SistemaExpertoProlog_Videojuegos
         public MainWindow()
         {
             var file = "C:/Users/jandr/Dropbox/Septimo Semestre/Programacion Logica y Funcional/Unidad IV/Proyecto Final/base_conocimiento.pl/datos_prueba.pl";
+
+            var archivo = "/Recursos/BaseConocimiento/datos.pl";
+
+            MessageBox.Show($"Path: { archivo }");
+
+            //MotorProlog.Instancia.RutaArchivo = archivo;
             MotorProlog.Instancia.RutaArchivo = file;
 
             MotorProlog.Instancia.IniciarProlog();
 
-            InitializeComponent();            
+            InitializeComponent();
 
             ActivarControlDeUsuario(ucTarjetaBase);
         }
