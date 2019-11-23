@@ -114,7 +114,7 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
                 else
                 {
                     tbNombre.Text = anterior.Nombre;
-                    var llave = anterior.Nombre.Substring(1, anterior.Nombre.Length - 1);
+                    var llave = anterior.Nombre.Substring(1, anterior.Nombre.Length - 2);
                     iImagen.Source = Sesion.Instancia.ObtenerImagen(llave);
                 }
 

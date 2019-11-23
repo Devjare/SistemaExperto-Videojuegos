@@ -17,6 +17,18 @@ namespace SistemaExpertoProlog_Videojuegos
         private Dictionary<String, ImageSource> Imagenes;
         private String rutaPadre;
 
+        public String RutaPadre
+        {
+            get
+            {
+                return rutaPadre;
+            }
+            set
+            {
+                this.rutaPadre = value;
+            }
+        }
+
         public static Sesion Instancia
         {
             get {
@@ -28,11 +40,10 @@ namespace SistemaExpertoProlog_Videojuegos
             }
         }
 
-        public Sesion() 
-        {
-            // CAMBIAR
-            rutaPadre = "C:/Users/jandr/Dropbox/Septimo Semestre/Programacion Logica y Funcional/Unidad IV/Proyecto Final/Recursos/Imagenes";
+        public Sesion() { }
 
+        public void CargarImagenes()
+        {
             Imagenes = new Dictionary<string, ImageSource>();
 
             var nombres = MotorProlog.Consultar("videojuego(V).");

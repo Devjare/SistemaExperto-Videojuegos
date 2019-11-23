@@ -27,12 +27,6 @@
                                    Margin="0,0" 
                                    Width="Auto" 
                                    Visibility="Collapsed"/>
-            <Controles:TarjetaPersonaje x:Name="ucTarjetaPersonaje" 
-                                        Grid.Row="0" 
-                                        Margin="0,0,0,0" 
-                                        Width="Auto" 
-                                        Visibility="Collapsed"/>
-            <Controles:TarjetaDesarrolladora x:Name="ucTarjetaDesarrolladora" Grid.Row="0" Margin="0,0" Width="Auto" Visibility="Collapsed"/>
             <Controles:TarjetaVideojuego x:Name="ucTarjetaVideojuego" Grid.Row="0" Margin="0,0" Width="Auto" Visibility="Collapsed"/>
 
             <!--Grid botones-->

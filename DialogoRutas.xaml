@@ -1,0 +1,62 @@
+﻿<Window x:Class="SistemaExpertoProlog_Videojuegos.DialogoRutas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SistemaExpertoProlog_Videojuegos"
+        mc:Ignorable="d"
+        Title="DialogoRutas" Height="150" Width="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    Margin="5, 0, 5, 0">
+            <TextBlock>Seleccione ruta archivo pl:</TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox Grid.Column="0"
+                         Name="txtRutaArchivo"/>
+                <Button Grid.Column="1"
+                        Name="btnSeleccionarArchivo">
+                    Seleccionar Archivo.
+                </Button>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1"
+                    Margin="5, 0, 5, 0">
+            <TextBlock>Seleccione ruta carpeta de imagenes:</TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox Grid.Column="0"
+                         Name="txtRutaCarpetaImagenes"/>
+                <Button Grid.Column="1"
+                        Name="btnSeleccionarCarpeta">
+                    Seleccionar Ruta.
+                </Button>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    Margin="5,5">
+            <Button x:Name="btnAceptar"
+                    Margin="5,5">Aceptar</Button>
+            <Button x:Name="btnCancelar"
+                    Margin="5,5">Cancelar</Button>
+        </StackPanel>
+        
+    </Grid>
+</Window>

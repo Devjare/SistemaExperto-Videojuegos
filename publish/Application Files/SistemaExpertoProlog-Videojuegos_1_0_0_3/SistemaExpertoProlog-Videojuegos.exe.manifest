@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="SistemaExpertoProlog-Videojuegos.exe" version="1.0.0.3" publicKeyToken="c6188bde90881e4d" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="SistemaExpertoProlog-Videojuegos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="SistemaExpertoProlog-Videojuegos.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaExpertoProlog-Videojuegos.exe" size="1682368">
+      <assemblyIdentity name="SistemaExpertoProlog-Videojuegos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>CU9dQ0cdnIF8m3Fwkg+u8ZijwjpkU+Pc2+9JfwsM+JE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SwiPlCs.dll" size="43008">
+      <assemblyIdentity name="SwiPlCs" version="1.1.60605.0" publicKeyToken="03EA137181587C56" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>/S3rrR5SSm+j7vo7LADsxncYFN9eJxMtqqAylKtu47k=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="SistemaExpertoProlog-Videojuegos.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=ADA\Andres Reyna" issuerKeyHash="8b6cecd2ffd660408c00a2f4eb2556dff4419518" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>6S0fCoorgMTvbKXSplAvizo0M9bdHCn4EbjD6mdI4po=</DigestValue></Reference></SignedInfo><SignatureValue>WrBM7OFPmAsy5qmrsyNx1xzwGiyKJ9zOGrnrb9ODxwsQheh8OLuU3WtZGWCzLmBQ3QSl8luwes/QWS4LGXsj5Esc+9fVhfu6NYvZRV0NWukUK1p1DksGBiyQpNCev49MKx3/T5fGLFeV9xp64+/xbDiKLOsRpcwVV6ZvewG/VjA=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>wq6WZd0rQRmfy+XD52mvWeUW+8kDQyuFlkqfWFXf98QWgN+XpfJkdBfgUZFNqWy+439PNWgb7FFkyEf1uVo6qtEkq2PCZEbgoLcRASQL5h1j8cLfh/qzpHoHrf1cSrSdpuOhO2IqA/5osikzGO3apjaYNlLaTJf6hgXL28x8Vu0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="9ae24867eac3b811f8291cddd633343a8b2f50a6d2a56cefc4802b8a0a1f2de9" Description="" Url=""><as:assemblyIdentity name="SistemaExpertoProlog-Videojuegos.exe" version="1.0.0.3" publicKeyToken="c6188bde90881e4d" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=ADA\Andres Reyna</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>HuoT0/F9c0Ll++o91VWUQX56xuDY9Qg1k4pJwoxs1zI=</DigestValue></Reference></SignedInfo><SignatureValue>l+YQvT/6Yvmtfq7mWH+EoG9uU1vy5tF+EFzGz9erb3Xp8VW2plSsM+mmlFsCAqEXGrrUsED1ep70mY1Nx7mUvcsp/XRFNZZX+wQsmdgHIFO834KNPwXT21ztTGA+qZaNzOq/4WviX/xQlU2TRetRDWd1O8+S8H42ihMfbjsNYs8=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>wq6WZd0rQRmfy+XD52mvWeUW+8kDQyuFlkqfWFXf98QWgN+XpfJkdBfgUZFNqWy+439PNWgb7FFkyEf1uVo6qtEkq2PCZEbgoLcRASQL5h1j8cLfh/qzpHoHrf1cSrSdpuOhO2IqA/5osikzGO3apjaYNlLaTJf6hgXL28x8Vu0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB2TCCAUKgAwIBAgIQEKU00erd/rxGvd1Hhh83+DANBgkqhkiG9w0BAQsFADArMSkwJwYDVQQDHiAAQQBEAEEAXABBAG4AZAByAGUAcwAgAFIAZQB5AG4AYTAeFw0xOTExMjIyMDEzNDhaFw0yMDExMjIwMjEzNDhaMCsxKTAnBgNVBAMeIABBAEQAQQBcAEEAbgBkAHIAZQBzACAAUgBlAHkAbgBhMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDCrpZl3StBGZ/L5cPnaa9Z5Rb7yQNDK4WWSp9YVd/3xBaA35el8mR0F+BRkU2pbL7jf081aBvsUWTIR/W5Wjqq0SSrY8JkRuCgtxEBJAvmHWPxwt+H+rOkeget/VxKtJ2m46E7YioD/miyKTMY7dqmNpg2UtpMl/qGBcvbzHxW7QIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAJmUVkgu/K3F7DvutTYPZ+8hFxdHdPkM0ZmP/7Oerpyap3Ayy7+FjGvxZdvSVBf1jOE7uEsl9CwhKRGBQmlc2o7hwLDs91O33jIT2gU7bOQNGlZcZabI/qRwzfelXj5Hf0u4oagdQr/WG0v7nrecy/MQGH9zEoPLJPkW+2/JCLpt</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

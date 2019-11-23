@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -91,6 +91,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -109,6 +110,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DialogoRutas.xaml.cs">
+      <DependentUpon>DialogoRutas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sesion.cs" />
     <Page Include="Controles\ControlCriteriosPersonaje.xaml">
       <SubType>Designer</SubType>
@@ -122,15 +126,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controles\TarjetaDesarrolladora.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controles\TarjetaPersonaje.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Controles\TarjetaVideojuego.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DialogoRutas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -150,12 +150,6 @@
     </Compile>
     <Compile Include="Controles\TarjetaBase.xaml.cs">
       <DependentUpon>TarjetaBase.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controles\TarjetaDesarrolladora.xaml.cs">
-      <DependentUpon>TarjetaDesarrolladora.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controles\TarjetaPersonaje.xaml.cs">
-      <DependentUpon>TarjetaPersonaje.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controles\TarjetaVideojuego.xaml.cs">
       <DependentUpon>TarjetaVideojuego.xaml</DependentUpon>

@@ -15,19 +15,27 @@ namespace SistemaExpertoProlog_Videojuegos
     /// </summary>
     public partial class MainWindow : Window
     {
-
         public MainWindow()
         {
-            var file = "C:/Users/jandr/Dropbox/Septimo Semestre/Programacion Logica y Funcional/Unidad IV/Proyecto Final/base_conocimiento.pl/datos_prueba_real.pl";
+            var rutaArchivo = "C:/Users/jandr/Dropbox/Septimo Semestre/Programacion Logica y Funcional/Unidad IV/Proyecto Final/base_conocimiento.pl/datos_prueba_real.pl";
+            var rutaImagenes = "C:/Users/jandr/Dropbox/Septimo Semestre/Programacion Logica y Funcional/Unidad IV/Proyecto Final/Recursos/Imagenes/";
 
-            var archivo = "/Recursos/BaseConocimiento/datos.pl";
+            var dialogoRutas = new DialogoRutas();
+            if (dialogoRutas.ShowDialog() == true)
+            {
+                rutaArchivo = dialogoRutas.RutaArchivo;
+                rutaImagenes = dialogoRutas.RutaImagenes;
+            }
+            else
+            {
+                Environment.Exit(-1);
+            }
 
-            // MessageBox.Show($"Path: { archivo }");
-
-            //MotorProlog.Instancia.RutaArchivo = archivo;
-            MotorProlog.Instancia.RutaArchivo = file;
-
+            MotorProlog.Instancia.RutaArchivo = rutaArchivo;
             MotorProlog.Instancia.IniciarProlog();
+
+            Sesion.Instancia.RutaPadre = rutaImagenes;
+            Sesion.Instancia.CargarImagenes();
 
             InitializeComponent();
 
@@ -96,8 +104,6 @@ namespace SistemaExpertoProlog_Videojuegos
         {
             var consultaBuilder = new StringBuilder();
             
-            // es_personaje_de(S, E, A, C, V).
-
             consultaBuilder.Append("es_personaje_de(");
 
             if (personaje.Genero != null) consultaBuilder.Append($"'{personaje.Genero}', ");
@@ -154,8 +160,6 @@ namespace SistemaExpertoProlog_Videojuegos
 
         private void ActivarControlDeUsuario(UserControl control)
         {
-            ucTarjetaDesarrolladora.Visibility = Visibility.Collapsed;
-            ucTarjetaPersonaje.Visibility = Visibility.Collapsed;
             ucTarjetaVideojuego.Visibility = Visibility.Collapsed;
 
             control.Visibility = Visibility.Visible;

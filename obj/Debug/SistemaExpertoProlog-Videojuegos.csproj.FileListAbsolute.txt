@@ -12,15 +12,11 @@ C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaEx
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.exe
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.pdb
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.csproj.CopyComplete
-C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\TarjetaPersonaje.g.cs
-C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\TarjetaPersonaje.baml
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\ControlCriteriosPersonaje.g.cs
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\ControlCriteriosPersonaje.baml
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.csprojAssemblyReference.cache
-C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\TarjetaDesarrolladora.g.cs
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\TarjetaVideojuego.g.cs
-C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\TarjetaDesarrolladora.baml
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\TarjetaVideojuego.baml
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\TarjetaBase.g.cs
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\TarjetaBase.baml
@@ -31,3 +27,5 @@ C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\bin\Debug\SistemaEx
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\bin\Debug\SistemaExpertoProlog-Videojuegos.application
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.exe.manifest
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.application
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\DialogoRutas.g.cs
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\DialogoRutas.baml
