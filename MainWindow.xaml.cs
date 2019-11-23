@@ -3,6 +3,8 @@ using SistemaExpertoProlog_Videojuegos.data;
 using SistemaExpertoProlog_Videojuegos.negocios;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -13,20 +15,14 @@ namespace SistemaExpertoProlog_Videojuegos
     /// </summary>
     public partial class MainWindow : Window
     {
-        // Hacer esto una enumeracion
-        private Int32 VIDEOJUEGOS = 0;
-        private Int32 PERSONAJES = 1;
-        private Int32 DESARROLLADORA = 2;
-
-        private char VARIABLE = 'A';
 
         public MainWindow()
         {
-            var file = "C:/Users/jandr/Dropbox/Septimo Semestre/Programacion Logica y Funcional/Unidad IV/Proyecto Final/base_conocimiento.pl/datos_prueba.pl";
+            var file = "C:/Users/jandr/Dropbox/Septimo Semestre/Programacion Logica y Funcional/Unidad IV/Proyecto Final/base_conocimiento.pl/datos_prueba_real.pl";
 
             var archivo = "/Recursos/BaseConocimiento/datos.pl";
 
-            MessageBox.Show($"Path: { archivo }");
+            // MessageBox.Show($"Path: { archivo }");
 
             //MotorProlog.Instancia.RutaArchivo = archivo;
             MotorProlog.Instancia.RutaArchivo = file;
@@ -40,7 +36,6 @@ namespace SistemaExpertoProlog_Videojuegos
 
         private void btnConsultar_Click(object sender, RoutedEventArgs e)
         {
-            var opcion = cbOpciones.SelectedIndex;
             var consulta = "";
 
             var consultas = new List<String>();
@@ -50,10 +45,10 @@ namespace SistemaExpertoProlog_Videojuegos
             var tema = ucCriteriosPersonaje.Tema;
             var desarrolladora = ucCriteriosPersonaje.Desarrolladora;
 
-            if (anio != ControlCriteriosPersonaje.NO_SELECCIONADO) consultas.Add($"lanzado_el({VARIABLE++}, {anio})");
-            if (genero != ControlCriteriosPersonaje.NO_SELECCIONADO) consultas.Add($"es_genero({VARIABLE++}, {genero})");
-            if (tema != ControlCriteriosPersonaje.NO_SELECCIONADO) consultas.Add($"es_tematica({VARIABLE++}, {tema})");
-            if (desarrolladora != ControlCriteriosPersonaje.NO_SELECCIONADO) consultas.Add($"desarrollado_por({VARIABLE++}, {desarrolladora})");
+            if (anio != ControlCriteriosPersonaje.NO_SELECCIONADO) consultas.Add($"lanzado_el(V, '{anio}')");
+            if (genero != ControlCriteriosPersonaje.NO_SELECCIONADO) consultas.Add($"es_genero(V, '{genero}')");
+            if (tema != ControlCriteriosPersonaje.NO_SELECCIONADO) consultas.Add($"es_tema(V, '{tema}')");
+            if (desarrolladora != ControlCriteriosPersonaje.NO_SELECCIONADO) consultas.Add($"desarrollado_por(V, '{desarrolladora}')");
 
             for (int i = 0; i < consultas.Count - 1; i++) consulta += consultas[i] + ", ";
 
@@ -62,28 +57,93 @@ namespace SistemaExpertoProlog_Videojuegos
             if (pilaPersonajes.Count == 0)
             {
                 consulta += $"{consultas[consultas.Count - 1]}.";
+                var nombresVideojuegos = MotorProlog.Consultar(consulta);
+                var listaVideojuegos = ObtenerVideojuegos(nombresVideojuegos);
+
+                if (nombresVideojuegos.Count == 0) MessageBox.Show("No videojuegos encontrados con esas caracteristicas!");
+                else ActualizarTarjetasVideojuegos(listaVideojuegos);
+
             }
             else
             {
+                consulta += consultas[consultas.Count - 1] + ", ";
+                consultas.Clear();
+                
+                foreach (var personaje in pilaPersonajes)
+                {
+                    if (personaje.Nombre != null)
+                    {
+                        var nombre = $"'{personaje.Nombre}'";
+                        consultas.Add($"personaje_de({nombre}, V)");
+                    }
+                    else
+                    {
+                        consultas.Add(ObtenerConsultaPersonaje(personaje));
+                    }
+                }
 
+                for (int i = 0; i < consultas.Count - 1; i++) consulta += consultas[i] + ", ";
+                consulta += $"{consultas[consultas.Count - 1]}.";
+                var nombresVideojuegos = MotorProlog.Consultar(consulta);
+                var listaVideojuegos = ObtenerVideojuegos(nombresVideojuegos);
+
+                if (nombresVideojuegos.Count == 0) MessageBox.Show("No videojuegos encontrados con esas caracteristicas!");
+                else ActualizarTarjetasVideojuegos(listaVideojuegos);
             }
-
-            // Resultados sera una lista de personajes.
-            // var resultados = MotorProlog.Consultar(consulta);
-
-            //ActualizarTarjetasPersonajes(resultados)
         }
 
-        private void ActualizarTarjetasDesarrolladoras(List<Desarrolladora> desarrolladoras)
+        private string ObtenerConsultaPersonaje(Personaje personaje)
         {
-            ucTarjetaDesarrolladora.Desarrolladoras = desarrolladoras;
-            ActivarControlDeUsuario(ucTarjetaDesarrolladora);
+            var consultaBuilder = new StringBuilder();
+            
+            // es_personaje_de(S, E, A, C, V).
+
+            consultaBuilder.Append("es_personaje_de(");
+
+            if (personaje.Genero != null) consultaBuilder.Append($"'{personaje.Genero}', ");
+            else consultaBuilder.Append("S, ");
+
+            if (personaje.Especie != null) consultaBuilder.Append($"'{personaje.Especie}', ");
+            else consultaBuilder.Append("E, ");
+
+            if (personaje.AtaqueEspecial != null) consultaBuilder.Append($"'{personaje.AtaqueEspecial}', ");
+            else consultaBuilder.Append("A, ");
+
+            if (personaje.ColorDistintivo != null) consultaBuilder.Append($"'{personaje.ColorDistintivo}', ");
+            else consultaBuilder.Append("C, ");
+
+            consultaBuilder.Append("V)");
+
+            return consultaBuilder.ToString();
         }
 
-        private void ActualizarTarjetasPersonajes(List<Personaje> personajes)
+        private List<Videojuego> ObtenerVideojuegos(List<string> nombresVideojuegos)
         {
-            ucTarjetaPersonaje.Personajes = personajes;
-            ActivarControlDeUsuario(ucTarjetaPersonaje);
+            var listaVideojuegos = new List<Videojuego>();
+
+            nombresVideojuegos.ForEach(nombre =>
+            {
+                nombre = $"'{nombre}'";
+                var fechaLanzamiento = MotorProlog.Consultar($"fecha_lanzamiento({nombre}, V).");
+                var genero = MotorProlog.Consultar($"es_genero({nombre}, V).");
+                var tema = MotorProlog.Consultar($"es_tema({nombre}, V).");
+                var desarrolladora = MotorProlog.Consultar($"desarrollado_por({nombre}, V).");
+                var descripcion = MotorProlog.Consultar($"descripcion({nombre}, V).");
+
+                var videojuego = new Videojuego()
+                {
+                    Nombre = nombre,
+                    Lanzamiento = fechaLanzamiento.Count != 0 ? fechaLanzamiento[0] : "No encontrado",
+                    Genero = genero.Count != 0 ? genero[0] : "No encontrado",
+                    Tematica = tema.Count != 0 ? tema[0] : "No encontrada",
+                    Desarrolladora = desarrolladora.Count != 0 ? desarrolladora[0] : "No encontrada",
+                    Descripcion = descripcion.Count != 0 ? descripcion[0] : "No encontrada"
+                };
+
+                listaVideojuegos.Add(videojuego);
+            });
+
+            return listaVideojuegos;
         }
 
         private void ActualizarTarjetasVideojuegos(List<Videojuego> videojuegos)
@@ -101,78 +161,25 @@ namespace SistemaExpertoProlog_Videojuegos
             control.Visibility = Visibility.Visible;
         }
 
-        // Cambiar a Tarjeta Base
-        private UserControl ObtenerTarjetaActiva()
-        {
-            if (ucTarjetaDesarrolladora.Visibility == Visibility.Visible) return ucTarjetaDesarrolladora;
-            else if (ucTarjetaVideojuego.Visibility == Visibility.Visible) return ucTarjetaVideojuego;
-            else return ucTarjetaPersonaje;
-        }
-
         private void btnAnterior_Click(object sender, RoutedEventArgs e)
         {
-            var tarjetaActiva = ObtenerTarjetaActiva();
-            if (tarjetaActiva is TarjetaPersonaje)
-            {
-                PersonajeAnterior(tarjetaActiva as TarjetaPersonaje);
-            }
-            else if (tarjetaActiva is TarjetaDesarrolladora)
-            {
-                DesarrolladoraAnterior(tarjetaActiva as TarjetaDesarrolladora);
-            }
-            else
-            {
-                VideojuegoAnterior(tarjetaActiva as TarjetaVideojuego);
-            }
+            VideojuegoAnterior(ucTarjetaVideojuego);
         }
 
         private void VideojuegoAnterior(TarjetaVideojuego tarjetaVideojuego)
         {
-            throw new NotImplementedException();
-        }
-
-        private void DesarrolladoraAnterior(TarjetaDesarrolladora tarjetaDesarrolladora)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void PersonajeAnterior(TarjetaPersonaje tarjetaPersonaje)
-        {
-            tarjetaPersonaje.PersonajeAnterior();
+            tarjetaVideojuego.VideojuegoAnterior();
         }
 
         private void btnSiguiente_Click(object sender, RoutedEventArgs e)
         {
-            var tarjetaActiva = ObtenerTarjetaActiva();
-            if (tarjetaActiva is TarjetaPersonaje)
-            {
-                SiguientePersonaje(tarjetaActiva as TarjetaPersonaje);
-            }
-            else if (tarjetaActiva is TarjetaDesarrolladora)
-            {
-                SiguieteDesarrolladora(tarjetaActiva as TarjetaDesarrolladora);
-            }
-            else
-            {
-                SiguienteVideojuego(tarjetaActiva as TarjetaVideojuego);
-            }
+            SiguienteVideojuego(ucTarjetaVideojuego);
         }
 
         private void SiguienteVideojuego(TarjetaVideojuego tarjetaVideojuego)
         {
-            throw new NotImplementedException();
+            tarjetaVideojuego.SiguienteVideojuego();
         }
-
-        private void SiguientePersonaje(TarjetaPersonaje tarjetaPersonaje)
-        {
-            tarjetaPersonaje.SiguientePersonaje();
-        }
-
-        private void SiguieteDesarrolladora(TarjetaDesarrolladora tarjetaDesarrolladora)
-        {
-            throw new NotImplementedException();
-        }
-
         
     }
 

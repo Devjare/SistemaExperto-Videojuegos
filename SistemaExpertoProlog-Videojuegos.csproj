@@ -109,6 +109,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Sesion.cs" />
     <Page Include="Controles\ControlCriteriosPersonaje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -170,22 +171,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="negocios\Consultor.cs" />
-    <Compile Include="negocios\Consultores\ConsultorDesarrolladoras.cs" />
-    <Compile Include="negocios\Consultores\ConsultorGeneros.cs" />
-    <Compile Include="negocios\Consultores\ConsultorPersonajes.cs" />
-    <Compile Include="negocios\Consultores\ConsultorTemas.cs" />
-    <Compile Include="negocios\Consultores\ConsultorVideojuegos.cs" />
     <Compile Include="negocios\MotorProlog.cs" />
-    <Compile Include="negocios\Presentadores\Presentador.cs" />
-    <Compile Include="negocios\Presentadores\PresentadorDesarrolladoras.cs" />
-    <Compile Include="negocios\Presentadores\PresentadorGeneros.cs" />
-    <Compile Include="negocios\Presentadores\PresentadorListaPersonajes.cs" />
-    <Compile Include="negocios\Presentadores\PresentadorPersonaje.cs" />
-    <Compile Include="negocios\Presentadores\PresentadorTemas.cs" />
-    <Compile Include="negocios\TipoQuery.cs" />
-    <Compile Include="negocios\Util\ConstructorConsulta.cs" />
-    <Compile Include="negocios\Util\ProcesadorEntrada.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -202,6 +188,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -215,21 +202,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ryu_png.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Recursos\Imagenes\ken_masters.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Recursos\Imagenes\ryu.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Recursos\Imagenes\ken_masters.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Recursos\Imagenes\base_jpg.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
@@ -240,6 +212,24 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\Imagenes\Call Of Duty Modern Warfare 2.jpg" />
+    <Resource Include="Recursos\Imagenes\Doom.jpg" />
+    <Resource Include="Recursos\Imagenes\Dragon Ball Fighter Z.jpg" />
+    <Resource Include="Recursos\Imagenes\Gta V.jpg" />
+    <Resource Include="Recursos\Imagenes\Halo.jpg" />
+    <Resource Include="Recursos\Imagenes\Left 4 Dead 2.jpg" />
+    <Resource Include="Recursos\Imagenes\Marvel Heroes Omega.jpg" />
+    <Resource Include="Recursos\Imagenes\Marvel Ultimate Alliance.jpg" />
+    <Resource Include="Recursos\Imagenes\Overwatch.jpg" />
+    <Resource Include="Recursos\Imagenes\Resident Evil Remake.jpg" />
+    <Resource Include="Recursos\Imagenes\Sonic.jpg" />
+    <Resource Include="Recursos\Imagenes\Street Fighter 2.jpg" />
+    <Resource Include="Recursos\Imagenes\Super Mario Bros 1.jpg" />
+    <Resource Include="Recursos\Imagenes\Yoshi Island.jpg" />
+    <Resource Include="Recursos\Imagenes\Zelda Ocarina Of Time.jpg" />
+    <Resource Include="Recursos\Imagenes\Zenith.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
 ﻿using SbsSW.SwiPlCs;
+using SistemaExpertoProlog_Videojuegos.data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,6 +47,22 @@ namespace SistemaExpertoProlog_Videojuegos.negocios
             {
                 PlEngine.PlCleanup();                
             }
+        }
+
+        internal static List<String> Consultar(string consulta)
+        {
+            var resultados = new List<String>();
+
+            var query = new PlQuery(consulta);
+            var soluciones = query.SolutionVariables;
+            foreach (var solucion in soluciones)
+            {
+                var resultado = solucion["V"].ToString();
+
+                resultados.Add(resultado);
+            }
+
+            return resultados;
         }
     }
 }

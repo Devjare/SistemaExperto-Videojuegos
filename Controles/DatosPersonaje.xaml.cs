@@ -1,19 +1,6 @@
 ﻿using SistemaExpertoProlog_Videojuegos.data;
 using SistemaExpertoProlog_Videojuegos.negocios;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace SistemaExpertoProlog_Videojuegos.Controles
 {
@@ -22,17 +9,25 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
     /// </summary>
     public partial class DatosPersonaje : UserControl
     {
-        private Personaje DPersonaje { get; set; }
-
+        public Personaje DPersonaje { get; private set; }
+        public bool IsReady { get; private set; }
         public DatosPersonaje()
         {
             InitializeComponent();
+
+            IsReady = false;
 
             LlenarComboboxPersonajes();
             LlenarComboboxColores();
             LlenarComboboxGenero();
             LlenarComboboxAtaque();
             LlenarComboboxEspecie();
+
+            cbColor.SelectedIndex = 0;
+            cbGenero.SelectedIndex = 0;
+            cbPersonajes.SelectedIndex = 0;
+            cbAtaque.SelectedIndex = 0;
+            cbEspecie.SelectedIndex = 0;
 
             btnDefinirPersonaje.Click += (s, e) => { DefinirPersonaje(); };
 
@@ -44,22 +39,51 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
 
         private void LlenarComboboxEspecie()
         {
-            throw new NotImplementedException();
+            var especies = MotorProlog.Consultar("especie(V).");
+            cbEspecie.ItemsSource = especies;
         }
 
         private void LlenarComboboxAtaque()
         {
-            throw new NotImplementedException();
+            var ataques = MotorProlog.Consultar("ataque(V).");
+            cbAtaque.ItemsSource = ataques;
         }
 
         private void LlenarComboboxGenero()
         {
-            throw new NotImplementedException();
+            var colores = MotorProlog.Consultar("sexo(V).");
+            cbGenero.ItemsSource = colores;
         }
 
         private void LlenarComboboxColores()
         {
-            throw new NotImplementedException();
+            var colores = MotorProlog.Consultar("color(V).");
+            cbColor.ItemsSource = colores;
+        }
+
+        private void LlenarComboboxPersonajes()
+        {
+            var personajes = MotorProlog.Consultar("personaje(V).");
+            cbPersonajes.ItemsSource = personajes;
+        }
+
+        private void DefinirPersonaje()
+        {
+            DPersonaje = new Personaje();
+
+            if (chkPersonajeConocido.IsChecked == true)
+            {
+                DPersonaje.Nombre = cbPersonajes.SelectedItem.ToString();
+            }
+            else
+            {
+                DPersonaje.ColorDistintivo = cbColor.SelectedItem.ToString();
+                DPersonaje.Genero = cbGenero.SelectedItem.ToString();
+                DPersonaje.Especie = cbEspecie.SelectedItem.ToString();
+                DPersonaje.AtaqueEspecial = cbAtaque.SelectedItem.ToString();
+            }
+
+            IsReady = true;
         }
 
         private void HabilitarComboboxPersonaje(bool estado)
@@ -69,29 +93,6 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
             cbColor.IsEnabled = !estado;
             cbEspecie.IsEnabled = !estado;
             cbGenero.IsEnabled = !estado;
-        }
-
-        private void LlenarComboboxPersonajes()
-        {
-            var consultor = new ConsultorPersonajes();
-            var personajes = consultor.ConsultarTodos();
-
-            var nombresPersonajes = new List<String>();
-
-            foreach (var p in personajes)
-            {
-                nombresPersonajes.Add(p.Nombre);
-            }
-
-            cbPersonajes.ItemsSource = nombresPersonajes;
-        }
-
-        private void DefinirPersonaje()
-        {
-            DPersonaje.ColorDistintivo = cbColor.SelectedItem.ToString();
-            DPersonaje.Genero = cbGenero.SelectedItem.ToString();
-            DPersonaje.Especie = cbEspecie.SelectedItem.ToString();
-            DPersonaje.AtaqueEspecial = cbAtaque.SelectedItem.ToString();
         }
     }
 }

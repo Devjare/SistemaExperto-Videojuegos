@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaExpertoProlog-Videojuegos.exe" size="460736">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaExpertoProlog-Videojuegos.exe" size="1684416">
       <assemblyIdentity name="SistemaExpertoProlog-Videojuegos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>aycMNxaFGysX3L/Pq8AI9B+CXDAzg4NL7v8+WfSq+sU=</dsig:DigestValue>
+        <dsig:DigestValue>byuGBTB/jokwgX3/N6FtO891trF/PEzuh72lIbfI0pM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

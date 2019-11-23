@@ -28,28 +28,6 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
         public TarjetaPersonaje()
         {
             InitializeComponent();
-            Personajes = new List<Personaje>();
-            var personajeBase = new Personaje()
-            {
-                Nombre = "El personaje",
-                Videojuegos = new List<Videojuego>()
-                {
-                    new Videojuego(){ Nombre = "El videojuego I"},
-                    new Videojuego(){ Nombre = "El videojuego  II"}
-                },
-                Descripcion = "La descripcion",
-                Imagen = "base_jpg"
-            };
-            Personajes.Add(personajeBase);
-            Posicion = 0;
-
-            tbNombre.Text = Personajes[Posicion].Nombre;
-            tbVideojuegos.Text += Personajes[Posicion].Videojuegos.ToString();
-            tbDescripcion.Text += Personajes[Posicion].Descripcion.ToString();
-
-            var currentDir = Environment.CurrentDirectory;
-            var uri = $"{currentDir}/../../Recursos/Imagenes/{Personajes[Posicion].Imagen.ToString()}.jpg";
-            iImagen.Source = new BitmapImage(new Uri(uri));
         }
         
         internal void SiguientePersonaje()

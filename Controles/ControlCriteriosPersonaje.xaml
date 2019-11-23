@@ -107,7 +107,7 @@
                         Name="btnEliminarPersonaje">Eliminart personaje</Button>
                 <Button Margin="5,5"
                         Name="btnDefinirCriterios">
-                    Definir Criterios.
+                    Definir Criterios Generales.
                 </Button>
             </StackPanel>
 

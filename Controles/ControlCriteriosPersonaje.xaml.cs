@@ -1,9 +1,9 @@
 ﻿using SistemaExpertoProlog_Videojuegos.data;
 using SistemaExpertoProlog_Videojuegos.negocios;
-using SistemaExpertoProlog_Videojuegos.negocios.Consultores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace SistemaExpertoProlog_Videojuegos.Controles
@@ -13,8 +13,28 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
     /// </summary>
     public partial class ControlCriteriosPersonaje : UserControl
     {
-        public Stack<Personaje> Personajes { get; private set; }
-        DatosPersonaje ultimoPersonajeAgregado;
+        private Stack<Personaje> personajes;
+
+        public Stack<Personaje> Personajes
+        {
+            get 
+            {
+                foreach (var children in spPersonajes.Children)
+                {
+                    var ucDatosPersonaje = children as DatosPersonaje;
+
+                    var personaje = ucDatosPersonaje.DPersonaje;
+
+                    personajes.Push(personaje);
+                }
+
+                return personajes; 
+            }
+            private set { personajes = value; }
+        }
+
+        private int ContadorPersonajes;
+        DatosPersonaje ucUltimoPersonaje;
         public String Anio { get; private set; }
         public String Desarrolladora { get; private set; }
         public String Genero { get; private set; }
@@ -27,6 +47,7 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
             InitializeComponent();
 
             Personajes = new Stack<Personaje>();
+            ContadorPersonajes = 0;
 
             LlenarComboboxAnio();
             LlenarComboboxGeneros();
@@ -69,17 +90,15 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
         private void LlenarComboboxTemas()
         {
 
-            var consultor = new ConsultorTemas();
-            var temas = consultor.ConsultarTodos();
-
+            var temas = MotorProlog.Consultar("tema(V).");
+            
             cbTema.ItemsSource = temas;
             cbTema.SelectedIndex = 0;
         }
 
         private void LlenarComboboxDesarrolladoras()
         {
-            var consultor = new ConsultorDesarrolladoras();
-            var desarrolladoras = consultor.ConsultarTodos();
+            var desarrolladoras = MotorProlog.Consultar("desarrolladora(V).");
 
             cbDesarrolladora.ItemsSource = desarrolladoras;
             cbDesarrolladora.SelectedIndex = 0;
@@ -87,8 +106,7 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
 
         private void LlenarComboboxGeneros()
         {
-            var consultor = new ConsultorGeneros();
-            var generos = consultor.ConsultarTodos();
+            var generos = MotorProlog.Consultar("genero(V).");
 
             cbGenero.ItemsSource = generos;
             cbGenero.SelectedIndex = 0;
@@ -113,20 +131,28 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
         }
         private void AgregarControlPersonaje()
         {
-            Personajes.Push(new Personaje());
+            if (ContadorPersonajes == 0)
+            {
+                ucUltimoPersonaje = new DatosPersonaje();
+                spPersonajes.Children.Add(ucUltimoPersonaje);
+                ContadorPersonajes++;
+                return;
+            }
+            else if (!ucUltimoPersonaje.IsReady)
+            {
+                MessageBox.Show("Defina el ultimo personaje agregado antes de continuar, por favor.");
+                return;
+            }
 
-            ultimoPersonajeAgregado = new DatosPersonaje();
-            spPersonajes.Children.Add(ultimoPersonajeAgregado);
+            ucUltimoPersonaje = new DatosPersonaje();
+            spPersonajes.Children.Add(ucUltimoPersonaje);
+            ContadorPersonajes++;
         }
 
         private void EliminarPersonaje()
         {
-            if (Personajes.Count > 0)
-            {
-                Personajes.Pop();
-            }
-
-            spPersonajes.Children.Remove(ultimoPersonajeAgregado);
+            spPersonajes.Children.Remove(ucUltimoPersonaje);
+            ucUltimoPersonaje = (DatosPersonaje) spPersonajes.Children[spPersonajes.Children.Count - 1];
         }
     }
 }
