@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaExpertoProlog_Videojuegos.data.entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SistemaExpertoProlog_Videojuegos.data
 {
-    public class Videojuego : IEntitdad
+    public class Videojuego
     {
         public String Lanzamiento { get; set; }
         public String Descripcion { get; set; }

@@ -1,4 +1,5 @@
 ﻿using SistemaExpertoProlog_Videojuegos.data;
+using SistemaExpertoProlog_Videojuegos.data.entidades;
 using SistemaExpertoProlog_Videojuegos.negocios;
 using System;
 using System.Collections.Generic;
