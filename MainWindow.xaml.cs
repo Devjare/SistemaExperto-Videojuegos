@@ -20,16 +20,16 @@ namespace SistemaExpertoProlog_Videojuegos
             var rutaArchivo = "C:/Users/jandr/Dropbox/Septimo Semestre/Programacion Logica y Funcional/Unidad IV/Proyecto Final/base_conocimiento.pl/datos_prueba_real.pl";
             var rutaImagenes = "C:/Users/jandr/Dropbox/Septimo Semestre/Programacion Logica y Funcional/Unidad IV/Proyecto Final/Recursos/Imagenes/";
 
-            //var dialogoRutas = new DialogoRutas();
-            //if (dialogoRutas.ShowDialog() == true)
-            //{
-            //    rutaArchivo = dialogoRutas.RutaArchivo;
-            //    rutaImagenes = dialogoRutas.RutaImagenes;
-            //}
-            //else
-            //{
-            //    Environment.Exit(-1);
-            //}
+            var dialogoRutas = new DialogoRutas();
+            if (dialogoRutas.ShowDialog() == true)
+            {
+                rutaArchivo = dialogoRutas.RutaArchivo;
+                rutaImagenes = dialogoRutas.RutaImagenes;
+            }
+            else
+            {
+                Environment.Exit(-1);
+            }
 
             MotorProlog.Instancia.RutaArchivo = rutaArchivo;
             MotorProlog.Instancia.IniciarProlog();
