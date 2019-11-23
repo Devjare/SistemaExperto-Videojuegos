@@ -42,29 +42,32 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
 
         public static String NO_SELECCIONADO = "NO SELECCIONADA";
 
+        private int ContadorCheckboxMarcados;
+
         public ControlCriteriosPersonaje()
         {
             InitializeComponent();
 
             Personajes = new Stack<Personaje>();
             ContadorPersonajes = 0;
+            ContadorCheckboxMarcados = 0;
 
             LlenarComboboxAnio();
             LlenarComboboxGeneros();
             LlenarComboboxDesarrolladoras();
             LlenarComboboxTemas();
 
-            chkAñoDesconocido.Unchecked += (s, e) => { HabilitarComboBox(cbAños, true); };
-            chkAñoDesconocido.Checked += (s, e) => { HabilitarComboBox(cbAños, false); };
+            chkAñoDesconocido.Unchecked += (s, e) => { HabilitarComboBox(cbAños, true, s); };
+            chkAñoDesconocido.Checked += (s, e) => { HabilitarComboBox(cbAños, false, s); };
 
-            chkDesarrolladoraDesconocida.Unchecked += (s, e) => { HabilitarComboBox(cbDesarrolladora, true); };
-            chkDesarrolladoraDesconocida.Checked += (s, e) => { HabilitarComboBox(cbDesarrolladora, false); };
+            chkDesarrolladoraDesconocida.Unchecked += (s, e) => { HabilitarComboBox(cbDesarrolladora, true, s); };
+            chkDesarrolladoraDesconocida.Checked += (s, e) => { HabilitarComboBox(cbDesarrolladora, false, s); };
 
-            chkGeneroDesconocido.Unchecked += (s, e) => { HabilitarComboBox(cbGenero, true); };
-            chkGeneroDesconocido.Checked += (s, e) => { HabilitarComboBox(cbGenero, false); };
+            chkGeneroDesconocido.Unchecked += (s, e) => { HabilitarComboBox(cbGenero, true, s); };
+            chkGeneroDesconocido.Checked += (s, e) => { HabilitarComboBox(cbGenero, false, s); };
 
-            chkTemaDesconocido.Unchecked += (s, e) => { HabilitarComboBox(cbTema, true); };
-            chkTemaDesconocido.Checked += (s, e) => { HabilitarComboBox(cbTema, false); };
+            chkTemaDesconocido.Unchecked += (s, e) => { HabilitarComboBox(cbTema, true, s); };
+            chkTemaDesconocido.Checked += (s, e) => { HabilitarComboBox(cbTema, false, s); };
 
             btnAgregarPersonaje.Click += (s, e) => { AgregarControlPersonaje(); };
             btnEliminarPersonaje.Click += (s, e) => { EliminarPersonaje(); };
@@ -89,7 +92,6 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
 
         private void LlenarComboboxTemas()
         {
-
             var temas = MotorProlog.Consultar("tema(V).");
             
             cbTema.ItemsSource = temas;
@@ -125,9 +127,32 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
             cbAños.SelectedIndex = 0;
         }
 
-        private void HabilitarComboBox(ComboBox comboBox, bool estado)
+        private void HabilitarComboBox(ComboBox comboBox, bool estado, Object s)
         {
+            if (ContadorCheckboxMarcados == 3 && estado == false)
+            {
+                MessageBox.Show("Debe mantener al menos un criterio general!");
+
+                var checkbox = s as CheckBox;
+                if (checkbox == chkAñoDesconocido) chkAñoDesconocido.IsChecked = false;
+                else if (checkbox == chkDesarrolladoraDesconocida) chkDesarrolladoraDesconocida.IsChecked = false;
+                else if (checkbox == chkGeneroDesconocido) chkGeneroDesconocido.IsChecked = false;
+                else chkTemaDesconocido.IsChecked = false;
+
+                ContadorCheckboxMarcados++;
+
+                return;
+            }
+
             comboBox.IsEnabled = estado;
+            if (comboBox.IsEnabled == false)
+            {
+                ContadorCheckboxMarcados++;
+            }
+            else
+            {
+                ContadorCheckboxMarcados--;
+            }
         }
         private void AgregarControlPersonaje()
         {
@@ -152,7 +177,17 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
         private void EliminarPersonaje()
         {
             spPersonajes.Children.Remove(ucUltimoPersonaje);
-            ucUltimoPersonaje = (DatosPersonaje) spPersonajes.Children[spPersonajes.Children.Count - 1];
+            ContadorPersonajes--;
+
+            if (spPersonajes.Children.Count == 0)
+            {
+                ucUltimoPersonaje = null;
+            }
+            else
+            {
+                ucUltimoPersonaje = (DatosPersonaje) spPersonajes.Children[spPersonajes.Children.Count - 1];
+            }
+            
         }
     }
 }

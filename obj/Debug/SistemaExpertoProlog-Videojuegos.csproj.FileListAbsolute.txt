@@ -1,16 +1,8 @@
-C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\bin\Debug\SistemaExpertoProlog-Videojuegos.exe.config
-C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\bin\Debug\SistemaExpertoProlog-Videojuegos.exe
-C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\bin\Debug\SistemaExpertoProlog-Videojuegos.pdb
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\MainWindow.g.cs
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\App.g.cs
-C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos_MarkupCompile.cache
-C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos_MarkupCompile.lref
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\MainWindow.baml
-C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.g.resources
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog_Videojuegos.Properties.Resources.resources
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.csproj.GenerateResource.cache
-C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.exe
-C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.pdb
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.csproj.CopyComplete
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\ControlCriteriosPersonaje.g.cs
@@ -23,9 +15,17 @@ C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\bin\Debug\SwiPlCs.dll
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\DatosPersonaje.g.cs
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Controles\DatosPersonaje.baml
-C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\bin\Debug\SistemaExpertoProlog-Videojuegos.exe.manifest
-C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\bin\Debug\SistemaExpertoProlog-Videojuegos.application
-C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.exe.manifest
-C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\SistemaExpertoProlog-Videojuegos.application
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\DialogoRutas.g.cs
 C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\DialogoRutas.baml
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\bin\Debug\Sistema Experto Consultas Videojuegos.exe.config
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\bin\Debug\Sistema Experto Consultas Videojuegos.exe.manifest
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\bin\Debug\Sistema Experto Consultas Videojuegos.application
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\bin\Debug\Sistema Experto Consultas Videojuegos.exe
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\bin\Debug\Sistema Experto Consultas Videojuegos.pdb
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Sistema Experto Consultas Videojuegos_MarkupCompile.cache
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Sistema Experto Consultas Videojuegos_MarkupCompile.lref
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Sistema Experto Consultas Videojuegos.g.resources
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Sistema Experto Consultas Videojuegos.exe.manifest
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Sistema Experto Consultas Videojuegos.application
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Sistema Experto Consultas Videojuegos.exe
+C:\Users\jandr\source\repos\SistemaExpertoProlog-Videojuegos\obj\Debug\Sistema Experto Consultas Videojuegos.pdb

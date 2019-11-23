@@ -148,8 +148,8 @@ namespace SistemaExpertoProlog_Videojuegos.Controles {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SistemaExpertoProlog-Videojuegos;component/controles/controlcriteriospersonaje.x" +
-                    "aml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Sistema Experto Consultas Videojuegos;component/controles/controlcriteriosperson" +
+                    "aje.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Controles\ControlCriteriosPersonaje.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

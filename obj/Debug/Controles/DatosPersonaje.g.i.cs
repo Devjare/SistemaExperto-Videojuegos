@@ -108,7 +108,7 @@ namespace SistemaExpertoProlog_Videojuegos.Controles {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SistemaExpertoProlog-Videojuegos;component/controles/datospersonaje.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Sistema Experto Consultas Videojuegos;component/controles/datospersonaje.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Controles\DatosPersonaje.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -100,7 +100,7 @@ namespace SistemaExpertoProlog_Videojuegos {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SistemaExpertoProlog-Videojuegos;component/dialogorutas.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Sistema Experto Consultas Videojuegos;component/dialogorutas.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\DialogoRutas.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
