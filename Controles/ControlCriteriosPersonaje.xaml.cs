@@ -13,12 +13,14 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
     /// </summary>
     public partial class ControlCriteriosPersonaje : UserControl
     {
-        Stack<Personaje> Personajes { get; set; }
+        public Stack<Personaje> Personajes { get; private set; }
         DatosPersonaje ultimoPersonajeAgregado;
         public String Anio { get; private set; }
         public String Desarrolladora { get; private set; }
         public String Genero { get; private set; }
         public String Tema { get; private set; }
+
+        public static String NO_SELECCIONADO = "NO SELECCIONADA";
 
         public ControlCriteriosPersonaje()
         {
@@ -51,16 +53,16 @@ namespace SistemaExpertoProlog_Videojuegos.Controles
 
         private void DefinirCriterios()
         {
-            if (chkAñoDesconocido.IsChecked == true) Anio = "desconocido";
+            if (chkAñoDesconocido.IsChecked == true) Anio = NO_SELECCIONADO;
             else Anio = cbAños.SelectedItem.ToString();
 
-            if (chkDesarrolladoraDesconocida.IsChecked == true) Desarrolladora = "desconocida";
+            if (chkDesarrolladoraDesconocida.IsChecked == true) Desarrolladora = NO_SELECCIONADO;
             else Desarrolladora = cbDesarrolladora.SelectedItem.ToString();
 
-            if (chkGeneroDesconocido.IsChecked == true) Genero = "desconocido";
+            if (chkGeneroDesconocido.IsChecked == true) Genero = NO_SELECCIONADO;
             else Genero = cbGenero.SelectedItem.ToString();
 
-            if (chkTemaDesconocido.IsChecked == true) Tema = "desconocido";
+            if (chkTemaDesconocido.IsChecked == true) Tema = NO_SELECCIONADO;
             else Tema = cbTema.SelectedItem.ToString();
         }
 

@@ -18,6 +18,8 @@ namespace SistemaExpertoProlog_Videojuegos
         private Int32 PERSONAJES = 1;
         private Int32 DESARROLLADORA = 2;
 
+        private char VARIABLE = 'A';
+
         public MainWindow()
         {
             var file = "C:/Users/jandr/Dropbox/Septimo Semestre/Programacion Logica y Funcional/Unidad IV/Proyecto Final/base_conocimiento.pl/datos_prueba.pl";
@@ -39,31 +41,37 @@ namespace SistemaExpertoProlog_Videojuegos
         private void btnConsultar_Click(object sender, RoutedEventArgs e)
         {
             var opcion = cbOpciones.SelectedIndex;
-            
-            if (opcion.Equals(VIDEOJUEGOS))
-            {
-                var consultor = new ConsultorVideojuegos();
-                List<Videojuego> videojuegos = consultor.Consultar();
+            var consulta = "";
 
-                MotorProlog.Instancia.CerrarProlog();
-                
-                ActualizarTarjetasVideojuegos(videojuegos);
-            } 
-            else if(opcion.Equals(PERSONAJES))
-            {
-                var consultor = new ConsultorPersonajes();
-                List<Personaje> personajes = consultor.Consultar("19", "Rubio", "Azules");
+            var consultas = new List<String>();
 
-                //MotorProlog.Instancia.CerrarProlog();
-                
-                ActualizarTarjetasPersonajes(personajes);
+            var anio = ucCriteriosPersonaje.Anio;
+            var genero = ucCriteriosPersonaje.Genero;
+            var tema = ucCriteriosPersonaje.Tema;
+            var desarrolladora = ucCriteriosPersonaje.Desarrolladora;
+
+            if (anio != ControlCriteriosPersonaje.NO_SELECCIONADO) consultas.Add($"lanzado_el({VARIABLE++}, {anio})");
+            if (genero != ControlCriteriosPersonaje.NO_SELECCIONADO) consultas.Add($"es_genero({VARIABLE++}, {genero})");
+            if (tema != ControlCriteriosPersonaje.NO_SELECCIONADO) consultas.Add($"es_tematica({VARIABLE++}, {tema})");
+            if (desarrolladora != ControlCriteriosPersonaje.NO_SELECCIONADO) consultas.Add($"desarrollado_por({VARIABLE++}, {desarrolladora})");
+
+            for (int i = 0; i < consultas.Count - 1; i++) consulta += consultas[i] + ", ";
+
+            var pilaPersonajes = ucCriteriosPersonaje.Personajes;
+
+            if (pilaPersonajes.Count == 0)
+            {
+                consulta += $"{consultas[consultas.Count - 1]}.";
             }
             else
             {
-                var consultor = new ConsultorDesarrolladoras();
-                List<String> desarrolladoras = consultor.Consultar();
-                // ActualizarTarjetasDesarrolladoras(desarrolladoras);
+
             }
+
+            // Resultados sera una lista de personajes.
+            // var resultados = MotorProlog.Consultar(consulta);
+
+            //ActualizarTarjetasPersonajes(resultados)
         }
 
         private void ActualizarTarjetasDesarrolladoras(List<Desarrolladora> desarrolladoras)
