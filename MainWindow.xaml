@@ -53,25 +53,53 @@
                                                  Grid.Row="0" 
                                                  x:Name="ucCriteriosPersonaje"/>
 
-            <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="41" Width="122">
-                <Button Margin="5,5">
-                    Cancelar
-                </Button>
-                <Button Margin="5,5" Name="btnConsultar" Click="btnConsultar_Click">
-                    Consultar
-                </Button>
-            </StackPanel>
+            <Grid Grid.Row="1">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel 
+                    Grid.Column="0"
+                    Orientation="Horizontal" 
+                    VerticalAlignment="Bottom" 
+                    HorizontalAlignment="Left" 
+                    Height="41" 
+                    Width="122">
+
+                    <Button x:Name="btnReiniciar"
+                            Margin="5,5">
+                        Reiniciar Consulta
+                    </Button>
+                    
+                </StackPanel>
+
+                <StackPanel Grid.Column="1"
+                        Orientation="Horizontal" 
+                        VerticalAlignment="Bottom" 
+                        HorizontalAlignment="Right" 
+                        Height="41" 
+                        Width="122">
+                    <Button Margin="5,5">
+                        Cancelar
+                    </Button>
+                    <Button Margin="5,5" Name="btnConsultar" Click="btnConsultar_Click">
+                        Consultar
+                    </Button>
+                </StackPanel>
+            </Grid>
 
         </Grid>
-        
+
         <GridSplitter HorizontalAlignment="Center"
                       VerticalAlignment="Stretch"
                       Grid.Column="1"
                       Width="5"
                       Background="Black">
-            
+
         </GridSplitter>
-        
+
     </Grid>
 
 </Window>
